@@ -1,0 +1,185 @@
+:root{
+    --background: #000;
+    --text-color: #fff;
+
+    --button-color: #000;
+    --button-text-color: #fff;
+
+    --secondary-color: rgb(37, 37, 37);
+    --card-text-color: #fff;
+
+    --accent-color: #15b1e0;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16pt;
+    color: var(--text-color);
+}
+
+body{
+    min-height: 100vh;
+    padding: 10px;
+    background-color: var(--background);
+    overflow-x: hidden;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100dvh;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.title{
+    font-size: 2.5em;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+.filters{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.button{
+    background-color: var(--accent-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 90px;
+}
+
+.add-button{
+    position: absolute;
+    top: 1;
+    right: 0;
+    padding: 0.6rem 1.5rem;
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: #1080a1;
+}
+
+.button.selected{
+    transform: scale(0.8);
+}
+
+.todo-input{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 0.5rem auto;
+    border-radius: 99px;
+    border: none;
+    background: none;
+    color: var(--card-text-color);
+    outline: 1px solid var(--secondary-color);
+    caret-color: var(--accent-color);
+}
+
+.tasks{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.task{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 100%;
+    margin: 0.2rem;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    text-align: start;
+    background-color: var(--secondary-color);
+    user-select: none;
+    overflow: hidden;
+}
+
+.task li {
+    padding-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-grow: 2; /* Permite que el texto ocupe el espacio disponible */
+}
+
+.task button{
+    background-color: var(--secondary-color);
+    border-radius: 9px;
+    padding: 0.2rem 0.4rem;
+    color: var(--button-text-color);
+    border: none;
+    flex-shrink: 0; /* Evita que el botón se reduzca */
+}
+
+.task button:hover{
+    background-color: red;
+    cursor: pointer;
+}
+
+.todo-form{
+    position: relative;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+}
+
+.done li{
+    text-decoration: line-through;
+    color: rgb(61, 60, 60);
+}
+
+.custom-checkbox{
+    min-width: 30px;
+    min-height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0.5rem 0.5rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 99px;
+    cursor: pointer;
+}
+
+.done .custom-checkbox{
+    background: var(--accent-color);
+}
+
+@media (max-width: 768px){
+    .task button{
+        background-color: red;
+    }
+}
+
+@keyframes slideOut{
+    0% {
+        transform: translateX(0);
+    }
+    90%{
+        display: none;
+        visibility: hidden;
+        transform: translate(120%);
+    }
+    
+}
